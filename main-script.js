@@ -4,9 +4,9 @@ runPreloaderAnimation();
 window.addEventListener("DOMContentLoaded", (event) => {
     let isMobile = window.matchMedia("(max-width: 1024px)");
 
-    if (isMobile.matches) {
-        hideMobileHeaderonScroll();
-    }
+    //if (isMobile.matches) {
+    hideMobileHeaderonScroll();
+    //}
 
     animateLinks();
     initMobileMenu();
