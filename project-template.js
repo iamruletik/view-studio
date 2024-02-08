@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         });
 
 
-
+    lenis.start();
 
 });
 
