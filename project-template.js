@@ -1,9 +1,16 @@
 /*****************************************************Main Function***************************************************/
 window.addEventListener("DOMContentLoaded", (event) => {
+
+    let schemeScreen = document.querySelector("#schemeSlider");
+    let additionalScreen = document.querySelector("#secondScreen");
+    let progressScreen = document.querySelector("#progressScreen");
+
     let heroSlider = createHeroSlider();
-    createSchemeSlider();
-    createAdditionalSlider();
-    createProjectProgressSlider();
+    if (schemeScreen.classList.contains("w-condition-invisible") == false) { createSchemeSlider(); }
+    if (additionalScreen.classList.contains("w-condition-invisible") == false) { createAdditionalSlider(); }
+    if (progressScreen.classList.contains("w-condition-invisible") == false) { createProjectProgressSlider(); }
+
+
     makeSliderButtonsFlow(document.querySelector("#mainScreen"));
     makeSliderButtonsFlow(document.querySelector("#secondScreen"));
 
@@ -51,9 +58,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
             duration: 1,
             ease: "power2.inOut"
         });
-
-
-    lenis.start();
 
 });
 
@@ -408,6 +412,8 @@ function createAdditionalSlider() {
 
     function toggleDotBtnsActive() {
         let paginationDots = Array.from(paginationContainer.querySelectorAll('.pagination-holder'));
+
+        console.log(paginationDots);
 
         const previous = embla.previousScrollSnap();
         const selected = embla.selectedScrollSnap();
